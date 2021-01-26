@@ -1,8 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function Footer() {
-    var footer = document.querySelector('#footer');
-    var markup = "<div class=\"container\">\n                    <p class=\"float-right\">\n                    <a href=\"#\">Back to top</a>\n                    </p>\n                  </div>";
+export default function Footer() {
+    const footer = document.querySelector('#footer');
+    const markup = `<div class="container">
+                    <p class="float-right">
+                    <a href="#">Back to top</a>
+                    </p>
+                  </div>`;
     return footer.innerHTML = markup;
 }
-exports.default = Footer;

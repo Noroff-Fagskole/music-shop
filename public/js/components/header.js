@@ -1,8 +1,39 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function Header() {
-    var header = document.querySelector('#header');
-    var markup = "<div class=\"collapse bg-dark\" id=\"navbarHeader\">\n                    <div class=\"container\">\n                      <div class=\"row\">\n                        <div class=\"col-sm-8 col-md-7 py-4\">\n                          <h4 class=\"text-white\">Login</h4>\n                        </div>\n                        <div class=\"col-sm-4 offset-md-1 py-4\">\n                          <h4 class=\"text-white\">Contact</h4>\n                          <ul class=\"list-unstyled\">\n                            <li><a href=\"#\" class=\"text-white\">Follow on Twitter</a></li>\n                            <li><a href=\"#\" class=\"text-white\">Like on Facebook</a></li>\n                            <li><a href=\"#\" class=\"text-white\">Email me</a></li>\n                          </ul>\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"navbar navbar-dark bg-dark shadow-sm\">\n                    <div class=\"container d-flex justify-content-between\">\n                      <a href=\"/\" class=\"navbar-brand d-flex align-items-center\">\n                          <img src=\"./img/noroff-logo.png\" alt=\"Noroff\" width=\"160\">\n                      </a>\n                      <button\n                        class=\"navbar-toggler\"\n                        type=\"button\"\n                        data-toggle=\"collapse\"\n                        data-target=\"#navbarHeader\"\n                        aria-controls=\"navbarHeader\"\n                        aria-expanded=\"false\"\n                        aria-label=\"Toggle navigation\"\n                      >\n                        <span class=\"navbar-toggler-icon\"></span>\n                      </button>\n                    </div>\n                  </div>";
+export default function Header() {
+    const header = document.querySelector('#header');
+    const markup = `<div class="collapse bg-dark" id="navbarHeader">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-8 col-md-7 py-4">
+                          <h4 class="text-white">Login</h4>
+                        </div>
+                        <div class="col-sm-4 offset-md-1 py-4">
+                          <h4 class="text-white">Contact</h4>
+                          <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><a href="#" class="text-white">Like on Facebook</a></li>
+                            <li><a href="#" class="text-white">Email me</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="navbar navbar-dark bg-dark shadow-sm">
+                    <div class="container d-flex justify-content-between">
+                      <a href="/" class="navbar-brand d-flex align-items-center">
+                          <img src="./img/noroff-logo.png" alt="Noroff" width="160">
+                      </a>
+                      <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarHeader"
+                        aria-controls="navbarHeader"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                      >
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </div>
+                  </div>`;
     return header.innerHTML = markup;
 }
-exports.default = Header;

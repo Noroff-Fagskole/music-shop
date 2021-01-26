@@ -19,7 +19,7 @@ export async function getHeroBanner() {
   });
 }
 
-async function apiCallWrapper(callback) {
+async function apiCallWrapper(callback: CallableFunction) {
   return callback()
     .then(resultData => ({ success: true, error: null, data: resultData }))
     .catch(error => ({ success: false, error: error, data: null }));

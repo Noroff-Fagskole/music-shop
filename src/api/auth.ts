@@ -1,6 +1,6 @@
 import { BASE_URL } from "../config/index.js";
 
-export async function authenticate(usernameOrEmail, password) {
+export async function authenticate(usernameOrEmail: string, password: string) {
   const fetchSettings = {
     method: 'POST',
     headers: {
@@ -15,7 +15,7 @@ export async function authenticate(usernameOrEmail, password) {
   return apiCallWrapper(async () => await (await fetch(BASE_URL + "/auth/local", fetchSettings)).json());
 }
 
-export async function register(username, userEmail, password) {
+export async function register(username: string, userEmail: string, password: string) {
   const fetchSettings = {
     method: 'POST',
     headers: {
@@ -31,7 +31,7 @@ export async function register(username, userEmail, password) {
   return apiCallWrapper(async () => await (await fetch(BASE_URL + "/auth/local/register", fetchSettings)).json());
 }
 
-async function apiCallWrapper(callback) {
+async function apiCallWrapper(callback: Function) {
   const result = { success: false, error: null, data: null };
   try {
     result.data = await callback();
