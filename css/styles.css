@@ -1,0 +1,11 @@
+body {
+  background-color: #eee;
+}
+
+.bg-dark {
+  background-color: #000!important;
+}
+
+.navbar-draw {
+  background-color: chartreuse;
+}
