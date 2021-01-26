@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mannuelf/semester-2-test/issues"
   },
-  "homepage": "https://github.com/mannuelf/semester-2-test#readme"
+  "homepage": "https://github.com/mannuelf/semester-2-test#readme",
+  "dependencies": {
+    "tslib": "^2.1.0"
+  }
 }
