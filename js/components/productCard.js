@@ -1,4 +1,7 @@
-export default function ProductCard(title, description, imgUrl, price) {
+import * as storage from "../utils/storage.js";
+import { CART_KEY } from "../config/index.js";
+
+export function ProductCard(title, description, imgUrl, price) {
   if (!(this instanceof ProductCard)) {
     return this.title, this.description, this.imgUrl, this.price;
   }
@@ -7,11 +10,6 @@ export default function ProductCard(title, description, imgUrl, price) {
   this.description = description;
   this.image_url = imgUrl;
   this.price = price;
-
-  function addToCart(e) {
-    const btn = e.target;
-    console.log("🧨 cart", btn);
-  }
 
   const productRow = document.querySelector("#productRow");
   const markup = `<div class="col-md-4">
@@ -36,15 +34,20 @@ export default function ProductCard(title, description, imgUrl, price) {
                       <div class="btn-group">
                         <button
                           type="button"
+                          data-action="ADD_TO_CART"
                           data-title="${this.title}"
                           data-price="${this.price}"
                           data-photo="${this.image_url}"
-                          class="addToCart btn btn-sm btn-primary"
+                          class="addToCartBtn btn btn-sm btn-primary"
                         >
                           Add to cart
                         </button>
                         <button
                           type="button"
+                          data-action="ADD_TO_FAVORITES"
+                          data-title="${this.title}"
+                          data-price="${this.price}"
+                          data-photo="${this.image_url}"
                           class="addToFavorites btn btn-sm btn-outline-primary"
                         >
                           Add to wishlist
@@ -55,14 +58,33 @@ export default function ProductCard(title, description, imgUrl, price) {
                 </div>
               </div>`;
 
-  document.addEventListener("click", (e) => {
-    if (e.target) {
-      const button = document.querySelector(".addToCart");
-      button.addEventListener("click", addToCart);
-    }
-  })
-
   return productRow.innerHTML += markup;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
 
+  let cart = [];
+
+  document.addEventListener("click", function (e) {
+    if (e.target && e.target.dataset.action === "ADD_TO_CART") {
+
+      const product = {
+        qty: 1,
+        title: e.target.dataset.title,
+        price: e.target.dataset.price,
+        photo: e.target.dataset.photo
+      }
+
+      const inCart = cart.filter(item => item.title === product.title).length > 0;
+
+      if (!inCart) {
+        cart.filter(item => item.title === product.title);
+        cart.push(product);
+        storage.store(CART_KEY, cart);
+      }
+
+    }
+  });
+
+
+});

@@ -32,7 +32,6 @@ export async function register(username, userEmail, password) {
   return registerResponse;
 }
 
-
 export function logout() {
   storage.remove(AUTH_TOKEN_KEY, loginResponse.data.jwt);
 }

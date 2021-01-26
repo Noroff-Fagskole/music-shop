@@ -76,4 +76,4 @@ import { getToken } from "../lib/user.js";
 
   }, false);
 
-})(Header, Footer);
+})();

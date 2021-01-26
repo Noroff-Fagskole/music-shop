@@ -1,7 +1,7 @@
 import { BASE_URL } from "../config/index.js";
 import Footer from "../components/footer.js";
 import Header from "../components/header.js";
-import ProductCard from "../components/productCard.js";
+import { ProductCard } from "../components/productCard.js";
 import { getAll } from "../api/product.js";
 
 (async function () {
@@ -27,4 +27,4 @@ import { getAll } from "../api/product.js";
     );
     renderProducts;
   }
-})(Header, Footer);
+})();

@@ -3,7 +3,7 @@ import { getFeaturedProducts, getHeroBanner } from "./api/home.js";
 import Footer from "./components/footer.js";
 import Header from "./components/header.js";
 import HeroBanner from "./components/heroBanner.js";
-import ProductCard from "./components/productCard.js";
+import { ProductCard } from "./components/productCard.js";
 
 (async function () {
   Header();
