@@ -3,8 +3,8 @@ import displayMessage from "../components/displayMessage.js";
 import { AUTH_TOKEN_KEY, USER_KEY } from "../config/index.js";
 import * as storage from "./storage.js";
 
-export async function login(usernameOrEmail, password) {
-  const loginResponse = await authAPI.authenticate(usernameOrEmail, password);
+export async function login(usernameOrEmail: string, password: string) {
+  const loginResponse: any = await authAPI.authenticate(usernameOrEmail, password);
 
   if (loginResponse.data.statusCode === 400) {
     displayMessage("danger", `${loginResponse.data.data[0].messages[0].message}`, ".message-container");
@@ -17,10 +17,9 @@ export async function login(usernameOrEmail, password) {
     displayMessage("success", "Success you are now logged in.", ".message-container");
     return loginResponse;
   }
-
 }
 
-export async function register(username, userEmail, password) {
+export async function register(username: string, userEmail: string, password: string) {
   const registerResponse = await authAPI.register(username, userEmail, password);
 
   if (registerResponse) {
@@ -33,7 +32,7 @@ export async function register(username, userEmail, password) {
 }
 
 export function logout() {
-  storage.remove(AUTH_TOKEN_KEY, loginResponse.data.jwt);
+  storage.remove(AUTH_TOKEN_KEY);
 }
 
 export function isLoggedIn() {

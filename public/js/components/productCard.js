@@ -59,26 +59,17 @@ export class ProductCard {
 }
 document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener("click", function (e) {
-        if (!e.target) {
-            return;
-        }
+        let cart = [];
         const button = e.target;
         if (button && button.dataset.action === "ADD_TO_CART") {
-            let cart = [];
             const product = {
                 qty: 1,
                 title: button.dataset.title,
                 price: button.dataset.price,
                 photo: button.dataset.photo
             };
-            const inCart = cart.filter((item) => {
-                console.log(item);
-                if (item.title === product.title) {
-                    return true;
-                }
-            });
+            const inCart = cart.filter((item) => item.title === product.title);
             if (!inCart) {
-                cart.filter(item => item.title === product.title);
                 cart.push(product);
                 storage.store(CART_KEY, cart); // save to local storage
             }

@@ -7,16 +7,23 @@ import Header from "../components/header.js";
   Header();
   Footer();
 
+  interface CartItem {
+    photo: string;
+    title: string;
+    price: number;
+    qty: number;
+  }
+
   const cartItems = storage.retrieve(CART_KEY);
-  console.log("cartItems", cartItems);
-  const productContainer = document.querySelector("#productRow");
-  const cartTotal = document.querySelector("#cartTotal");
+  const productContainer = document.querySelector("#productRow") as HTMLDivElement;
+  const cartTotal = document.querySelector("#cartTotal") as HTMLDivElement;
 
   if (cartItems.length === 0) {
     productContainer.innerHTML = "No items in cart yet";
   }
 
-  cartItems.forEach(cartItem => {
+  cartItems.forEach((cartItem: CartItem): void => {
+    console.log(cartItem.title, cartItem.photo, cartItem.price, cartItem.qty);
     const markup = `<div class="cart">
                   <div class="row">
                     <div class="col-sm-4">
@@ -34,5 +41,4 @@ import Header from "../components/header.js";
 
     productContainer.innerHTML += markup;
   });
-
 })();

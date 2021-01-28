@@ -8,11 +8,11 @@ import { login } from '../utils/user.js';
   Header();
   Footer();
 
-  const form = document.querySelector("form");
-  const username = document.querySelector("#username");
-  const password = document.querySelector("#password");
+  const form = document.querySelector("form") as HTMLFormElement;
+  const username = document.querySelector("#username") as HTMLInputElement;
+  const password = document.querySelector("#password") as HTMLInputElement;
 
-  function submitForm(event) {
+  function submitForm(event: Event) {
     event.preventDefault();
 
     const usernameValue = username.value.trim();

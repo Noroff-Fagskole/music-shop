@@ -1,18 +1,22 @@
 import * as storage from "../utils/storage.js";
 import { CART_KEY } from "../config/index.js";
 
-export function ProductCard(title: string, description: string, imgUrl: string, price: string ) {
-  if (!(this instanceof ProductCard)) {
-    return this.title, this.description, this.imgUrl, this.price;
+export class ProductCard {
+  title: string;
+  description: string;
+  image_url: string;
+  price: string;
+
+  constructor(title: string, description: string, image_url: string, price: string) {
+    this.title = title
+    this.description = description;
+    this.image_url = image_url;
+    this.price = price;
   }
 
-  this.title = title;
-  this.description = description;
-  this.image_url = imgUrl;
-  this.price = price;
-
-  const productRow = document.querySelector("#productRow");
-  const markup = `<div class="col-md-4">
+  renderMarkup() {
+    const productRow = document.querySelector("#productRow") as HTMLDivElement;
+    const markup = `<div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                   <img
                     src="${this.image_url}"
@@ -58,33 +62,30 @@ export function ProductCard(title: string, description: string, imgUrl: string, 
                 </div>
               </div>`;
 
-  return productRow.innerHTML += markup;
+    return productRow.innerHTML += markup;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("click", function (e: Event) {
+    let cart: object[] = [];
 
-  let cart = [];
-
-  document.addEventListener("click", function (e) {
-    if (e.target && e.target.dataset.action === "ADD_TO_CART") {
+    const button = e.target as HTMLButtonElement;
+    if (button && button.dataset.action === "ADD_TO_CART") {
 
       const product = {
         qty: 1,
-        title: e.target.dataset.title,
-        price: e.target.dataset.price,
-        photo: e.target.dataset.photo
+        title: button.dataset.title,
+        price: button.dataset.price,
+        photo: button.dataset.photo
       }
 
-      const inCart = cart.filter(item => item.title === product.title).length > 0;
+      const inCart = cart.filter((item: any) => item.title === product.title);
 
       if (!inCart) {
-        cart.filter(item => item.title === product.title);
         cart.push(product);
-        storage.store(CART_KEY, cart);
+        storage.store(CART_KEY, cart); // save to local storage
       }
-
     }
   });
-
-
 });

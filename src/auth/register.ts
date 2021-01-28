@@ -2,18 +2,18 @@ import { BASE_URL } from "../config/index.js";
 import displayMessage from "../components/displayMessage.js";
 import Footer from "../components/footer.js";
 import Header from "../components/header.js";
-import { register } from '../lib/user.js';
+import { register } from '../utils/user.js';
 
 (() => {
   Header();
   Footer();
 
-  const form = document.querySelector("form");
-  const username = document.querySelector("#username");
-  const userEmail = document.querySelector("#email");
-  const password = document.querySelector("#password");
+  const form = document.querySelector("form") as HTMLFormElement;
+  const username = document.querySelector("#username") as HTMLInputElement;
+  const userEmail = document.querySelector("#email")  as HTMLInputElement ;
+  const password = document.querySelector("#password") as HTMLInputElement;
 
-  function submitForm(event) {
+  function submitForm(event: Event) {
     event.preventDefault();
 
     const usernameValue = username.value.trim();

@@ -2,12 +2,13 @@ import { BASE_URL, FALLBACK_IMAGE } from "./config/index.js";
 import { getFeaturedProducts, getHeroBanner } from "./api/home.js";
 import Footer from "./components/footer.js";
 import Header from "./components/header.js";
-import HeroBanner from "./components/heroBanner.js";
+import { HeroBanner } from "./components/heroBanner.js";
 import { ProductCard } from "./components/productCard.js";
 
 (async function () {
   Header();
   Footer();
+
   const heroBanner = await getHeroBanner();
 
   const renderHeroBanner = new HeroBanner(
@@ -28,6 +29,6 @@ import { ProductCard } from "./components/productCard.js";
         `${BASE_URL}${products[i].image.formats.large.url}` : `${FALLBACK_IMAGE}`,
       products[i].price
     );
-    renderProducts;
+    renderProducts.renderMarkup();
   }
-})(getHeroBanner, Header, Footer);
+})();

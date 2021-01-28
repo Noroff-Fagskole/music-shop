@@ -1,4 +1,5 @@
 import { BASE_URL } from "../config/index.js";
+import { apiCallWrapper } from "./apiCallWrapper.js";
 
 export async function authenticate(usernameOrEmail: string, password: string) {
   const fetchSettings = {
@@ -29,17 +30,4 @@ export async function register(username: string, userEmail: string, password: st
   };
 
   return apiCallWrapper(async () => await (await fetch(BASE_URL + "/auth/local/register", fetchSettings)).json());
-}
-
-async function apiCallWrapper(callback: Function) { // TODO <Promise>
-  const result = { success: false, error: null, data: null };
-  try {
-    result.data = await callback();
-    result.success = true;
-  }
-  catch (err) {
-    result.error = err;
-  }
-
-  return result;
 }

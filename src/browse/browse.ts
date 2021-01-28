@@ -25,6 +25,7 @@ import { getAll } from "../api/product.js";
       imgUrl,
       products[i].price
     );
-    renderProducts;
+
+    renderProducts.renderMarkup();
   }
 })();

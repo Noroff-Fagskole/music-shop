@@ -13,6 +13,6 @@
   "include": ["./src"],
   "exclude": [
     "./src/vendor/**/*",  // globing
-    "./src/tester/**/*"
+    "./src/api/tester/"
   ]
 }

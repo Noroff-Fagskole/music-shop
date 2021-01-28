@@ -1,5 +1,5 @@
 export default function Header() {
-  const header = document.querySelector('#header');
+  const header = document.querySelector('#header') as HTMLDivElement;
   const markup = `<div class="collapse bg-dark" id="navbarHeader">
                     <div class="container">
                       <div class="row">
