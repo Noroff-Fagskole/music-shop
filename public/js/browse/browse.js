@@ -25,7 +25,7 @@ import { getAll } from "../api/product.js";
                 imgUrl = `${BASE_URL}${path}`;
             }
             const renderProducts = new ProductCard(products[i].title, products[i].description, imgUrl, products[i].price);
-            renderProducts;
+            renderProducts.renderMarkup();
         }
     });
 })();

@@ -11,7 +11,7 @@ import { BASE_URL, FALLBACK_IMAGE } from "./config/index.js";
 import { getFeaturedProducts, getHeroBanner } from "./api/home.js";
 import Footer from "./components/footer.js";
 import Header from "./components/header.js";
-import HeroBanner from "./components/heroBanner.js";
+import { HeroBanner } from "./components/heroBanner.js";
 import { ProductCard } from "./components/productCard.js";
 (function () {
     return __awaiter(this, void 0, void 0, function* () {
@@ -25,7 +25,7 @@ import { ProductCard } from "./components/productCard.js";
         for (let i = 0; i < products.length; i++) {
             const renderProducts = new ProductCard(products[i].title, products[i].description, products[i].image ?
                 `${BASE_URL}${products[i].image.formats.large.url}` : `${FALLBACK_IMAGE}`, products[i].price);
-            renderProducts;
+            renderProducts.renderMarkup();
         }
     });
-})(getHeroBanner, Header, Footer);
+})();

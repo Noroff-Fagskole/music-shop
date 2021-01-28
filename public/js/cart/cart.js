@@ -6,13 +6,13 @@ import Header from "../components/header.js";
     Header();
     Footer();
     const cartItems = storage.retrieve(CART_KEY);
-    console.log("cartItems", cartItems);
     const productContainer = document.querySelector("#productRow");
     const cartTotal = document.querySelector("#cartTotal");
     if (cartItems.length === 0) {
         productContainer.innerHTML = "No items in cart yet";
     }
-    cartItems.forEach(cartItem => {
+    cartItems.forEach((cartItem) => {
+        console.log(cartItem.title, cartItem.photo, cartItem.price, cartItem.qty);
         const markup = `<div class="cart">
                   <div class="row">
                     <div class="col-sm-4">

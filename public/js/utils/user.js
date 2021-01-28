@@ -14,6 +14,7 @@ import * as storage from "./storage.js";
 export function login(usernameOrEmail, password) {
     return __awaiter(this, void 0, void 0, function* () {
         const loginResponse = yield authAPI.authenticate(usernameOrEmail, password);
+        console.log(loginResponse);
         if (loginResponse.data.statusCode === 400) {
             displayMessage("danger", `${loginResponse.data.data[0].messages[0].message}`, ".message-container");
             return false;
@@ -37,7 +38,7 @@ export function register(username, userEmail, password) {
     });
 }
 export function logout() {
-    storage.remove(AUTH_TOKEN_KEY, loginResponse.data.jwt);
+    storage.remove(AUTH_TOKEN_KEY);
 }
 export function isLoggedIn() {
     return Boolean(getToken());
