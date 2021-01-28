@@ -19,8 +19,8 @@ export async function getHeroBanner() {
   });
 }
 
-async function apiCallWrapper(callback) {
+async function apiCallWrapper(callback: Function) { // TODO check <Promise>
   return callback()
-    .then(resultData => ({ success: true, error: null, data: resultData }))
-    .catch(error => ({ success: false, error: error, data: null }));
+    .then((resultData: object) => ({ success: true, error: null, data: resultData }))
+    .catch((error: object) => ({ success: false, error: error, data: null }));
 }

@@ -1,19 +1,23 @@
 {
-  "name": "semester-2-test",
+  "name": "music-shop",
   "version": "1.0.0",
-  "description": "",
+  "description": "To start install strapi.",
   "main": "index.js",
   "scripts": {
+    "develop": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mannuelf/semester-2-test.git"
   },
-  "author": "",
+  "author": "Mannuel Ferreira",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mannuelf/semester-2-test/issues"
   },
-  "homepage": "https://github.com/mannuelf/semester-2-test#readme"
+  "homepage": "https://github.com/mannuelf/semester-2-test#readme",
+  "keywords": [
+    "typeScript"
+  ]
 }

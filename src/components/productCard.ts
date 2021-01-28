@@ -1,7 +1,7 @@
 import * as storage from "../utils/storage.js";
 import { CART_KEY } from "../config/index.js";
 
-export function ProductCard(title, description, imgUrl, price) {
+export function ProductCard(title: string, description: string, imgUrl: string, price: string ) {
   if (!(this instanceof ProductCard)) {
     return this.title, this.description, this.imgUrl, this.price;
   }
