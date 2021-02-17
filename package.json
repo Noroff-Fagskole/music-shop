@@ -4,7 +4,7 @@
   "description": "To start install strapi.",
   "main": "index.js",
   "scripts": {
-    "develop": "tsc -w",
+    "develop": "parcel ./src/**.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/mannuelf/semester-2-test#readme",
   "keywords": [
     "typeScript"
-  ]
+  ],
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
 }
