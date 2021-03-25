@@ -1,8 +1,7 @@
-import { BASE_URL } from "../config/index.js";
 import displayMessage from "../components/displayMessage.js";
 import Footer from "../components/footer.js";
 import Header from "../components/header.js";
-import { login } from '../utils/user.js';
+import { login } from "../utils/user.js";
 
 (() => {
   Header();
@@ -26,5 +25,4 @@ import { login } from '../utils/user.js';
   }
 
   form.addEventListener("submit", submitForm);
-
 })();

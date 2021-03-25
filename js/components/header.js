@@ -1,5 +1,5 @@
 export default function Header() {
-  const header = document.querySelector('#header');
+  const header = document.querySelector("#header");
   const markup = `<div class="collapse bg-dark" id="navbarHeader">
                     <div class="container">
                       <div class="row">
@@ -19,7 +19,7 @@ export default function Header() {
                   </div>
                   <div class="navbar navbar-dark bg-dark shadow-sm">
                     <div class="container d-flex justify-content-between">
-                      <a href="/" class="navbar-brand d-flex align-items-center">
+                      <a href="./index.html" class="navbar-brand d-flex align-items-center">
                           <img src="./img/noroff-logo.png" alt="Noroff" width="160">
                       </a>
                       <button
@@ -36,5 +36,5 @@ export default function Header() {
                     </div>
                   </div>`;
 
-  return header.innerHTML = markup;
+  return (header.innerHTML = markup);
 }

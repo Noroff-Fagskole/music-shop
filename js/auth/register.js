@@ -1,8 +1,7 @@
-import { BASE_URL } from "../config/index.js";
 import displayMessage from "../components/displayMessage.js";
 import Footer from "../components/footer.js";
 import Header from "../components/header.js";
-import { register } from '../lib/user.js';
+import { register } from "../utils/user.js";
 
 (() => {
   Header();

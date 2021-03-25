@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semester 2 Project: Browse all products</title>
+    <link
+      href="https://www.noroff.no/images/logo/favicon.png"
+      rel="shortcut icon"
+      type="image/vnd.microsoft.icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+      integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semester 2 Project: Browse all products</title>
-  <link href="https://www.noroff.no/images/logo/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
-    integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="./css/styles.css" />
-</head>
+  <body>
+    <header id="header"></header>
 
-<body>
-  <header id="header"></header>
-
-  <main role="main">
-    <section id="jumbotron"></section>
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
-          <h2>Browse</h2>
+    <main role="main">
+      <section id="jumbotron"></section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <h2>Browse</h2>
+          </div>
+          <div id="productRow" class="row"></div>
         </div>
-        <div id="productRow" class="row"></div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <footer id="footer" class="text-muted"></footer>
+    <footer id="footer" class="text-muted"></footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"
-    integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw=="
-    crossorigin="anonymous"></script>
-  <script src="./js/browse/browse.js" type="module"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"
+      integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/browse/browse.js"></script>
+  </body>
 </html>
